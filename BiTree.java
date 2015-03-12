@@ -19,6 +19,20 @@ public class BiTree<T> {
 
 	public void pre(BiTree t) {
 		java.util.Stack<BiTree> s = new java.util.Stack<BiTree>();
+		s.push(t);
+		while (!s.isEmpty()) {
+			t=s.pop();
+			System.out.println(t.data);
+			if (t.right != null)
+				s.push(t.right);
+			if (t.left != null)
+				s.push(t.left);
+			
+		}
+	}
+
+	public void in(BiTree t) {
+		java.util.Stack<BiTree> s = new java.util.Stack<BiTree>();
 		while (t.right != null) {
 			s.push(t.right);
 			s.push(t);
